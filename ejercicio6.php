@@ -3,7 +3,7 @@
 <?php
 if (isset($_POST["submit"])) {
     foreach ($_FILES as $docu) {
-        if ($file['error']) {
+        if ($docu['error']) {
             echo $docu['error'] . $docu['name'] . '<br>';
         } else if (!move_uploaded_file($docu['tmp_name'], 'subirArchivos/' . $docu['name'])) {
             echo "Error";
